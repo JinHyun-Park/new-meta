@@ -27,8 +27,11 @@
             About
           </router-link> -->
         </v-btn>
-        <v-btn flat>
-          Link Three
+        <v-btn
+          flat
+          @click="moveToRegist()"
+        >
+          I/F Regist
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -58,6 +61,9 @@ export default {
     },
     moveToAbout() {
       this.$router.push({ name: 'about' });
+    },
+    moveToRegist() {
+      this.$router.push({ name: 'ifReg' });
     },
   },
 };

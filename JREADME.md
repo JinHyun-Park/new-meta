@@ -37,5 +37,24 @@ git remote add origin https://github.com/JinHyun-Park/new-meta.git
 SPA로 개발하여 빌드해서 상용에 올리고 사용자가 직접 url을 쳐서 들어갈 경우 없는 파일에 접근하는 것이기 때문에 Spring에서는 다음과 같은 설정을 해야함
 https://handcoding.tistory.com/196
 
-페이지 쪼개는 법
+페이지 쪼개는 법(MPA)
 https://kamang-it.tistory.com/entry/JavaScriptVuevue30-cli%EC%97%90%EC%84%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%8B%A8%EC%9C%84%EB%A1%9C-%EC%AA%BC%EA%B0%9C%EC%84%9C-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0
+
+vuetify(UI 컴포넌트 등) 적용과 IE11 지원하게 하기 위한 설정
+npm install --save vuetify  (vue add vuetify)
+https://vuetifyjs.com/ko/getting-started/quick-start
+npm install babel-polyfill --save
+npm install @babel/preset-env --save-dev
+
+npm install --save-dev babel-plugin-syntax-dynamic-import
+
+Babel 라이브러리 설치
+yarn add -D babel-cli babel-preset-env babel-preset-stage-2
+
+material-design icon
+npm install --save material-design-icons-iconfont
+
+transform-imports 패키지가 a-la-carte 컴포넌트에 꼭 필요한 건 아니지만 패키지들을 임포팅하는 프로세스를 간단하게 만들기 때문에 "매우" 추천
+https://vuetifyjs.com/ko/framework/a-la-carte
+npm i stylus stylus-loader style-loader css-loader --save-dev
+제한 사항(동적 구성 요소 있을 때 수동으로 구성 요소 가져와야함)에 관해서는 홈페이지 참고

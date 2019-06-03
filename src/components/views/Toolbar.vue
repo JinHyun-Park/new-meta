@@ -30,6 +30,15 @@
         I/F Regist
       </v-btn>
     </v-toolbar-items>
+    <v-spacer />
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn
+        flat
+        @click="moveToRegist()"
+      >
+        Logout
+      </v-btn>
+    </v-toolbar-items>
   </v-toolbar>
 </template>
 

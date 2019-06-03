@@ -1,6 +1,7 @@
 <template>
   <v-card
     color="grey lighten-3"
+    class="text-md-center"
   >
     <v-card-text>
       444

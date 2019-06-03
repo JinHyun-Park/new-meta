@@ -7,7 +7,28 @@
         </div>
       </v-flex>
     </v-layout>
+    <v-divider />
 
+    <v-btn-toggle v-model="text">
+      <v-btn
+        text
+        value="left"
+      >
+        EIGW
+      </v-btn>
+      <v-btn
+        text
+        value="center"
+      >
+        EAI
+      </v-btn>
+      <v-btn
+        text
+        value="right"
+      >
+        MCG
+      </v-btn>
+    </v-btn-toggle>
     <v-layout
       row
       wrap
@@ -46,10 +67,11 @@
       </v-flex>
     </v-layout>
 
+    <v-divider />
     <v-layout>
       <v-flex>
         <v-sheet>
-          나는 박진현이다.
+          메타 포탈
         </v-sheet>
       </v-flex>
     </v-layout>

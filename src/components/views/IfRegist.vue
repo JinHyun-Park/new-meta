@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <v-container grid-list-md>
+    <v-container
+      grid-list-md
+    >
       <v-layout>
         <v-flex>
           <div>
@@ -11,6 +13,7 @@
       <!-- <v-divider /> -->
 
       <ButtonToggle />    <!-- EIGW, EAI, MCG 버튼그룹 -->
+      <v-divider />
       <v-layout
         row
         wrap
@@ -18,20 +21,26 @@
         <v-flex
           d-flex
           xs9
+          sm9
           md9
         >
           <v-layout
-            column
+            row
+            wrap
           >
-            <v-flex
-              d-flex
-              xs12
-              sm6
-              md6
-            >
+            <v-flex d-flex>
               <v-card>
-                <RegistList />
+                <v-card-text><RegistList /></v-card-text>
                 <!-- <AddListInRegist /> -->
+              </v-card>
+            </v-flex>
+
+            <v-flex d-flex>
+              <v-card>
+                <v-card-text>
+                  <!-- <v-card-text><RegistList /></v-card-text> -->
+                  <AddListInRegist />
+                </v-card-text>
               </v-card>
             </v-flex>
           </v-layout>
@@ -41,10 +50,28 @@
           d-flex
           xs3
           md3
-          color="grey lighten-3"
-          align-self-center
+          class="text-xs-center"
         >
-          <RightSideCard />
+          <!-- <v-layout class="blue">
+            <v-flex align-self-center>
+              <v-card>
+                <v-card-text>
+                  3333333
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout> -->
+
+          <v-card
+            color="grey"
+          >
+            <v-card-text
+              class="white--text"
+            >
+              11
+              <RightSideCard />
+            </v-card-text>
+          </v-card>
         </v-flex>
       </v-layout>
 
@@ -61,14 +88,14 @@
 </template>
 
 <script>
-// import AddListInRegist from '@/components/regist/AddListInRegist.vue';
+import AddListInRegist from '@/components/regist/AddListInRegist.vue';
 import RightSideCard from '@/components/regist/RightSideCard.vue';
 import RegistList from '@/components/regist/RegistList.vue';
 import ButtonToggle from '@/components/regist/ButtonToggle.vue';
 
 export default {
   components: {
-    RightSideCard, RegistList, ButtonToggle, // AddListInRegist,
+    RightSideCard, RegistList, ButtonToggle, AddListInRegist,
   },
 };
 </script>

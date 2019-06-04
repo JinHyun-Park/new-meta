@@ -1,0 +1,22 @@
+<template>
+  <v-btn-toggle v-model="text">
+    <v-btn
+      text
+      value="left"
+    >
+      EIGW
+    </v-btn>
+    <v-btn
+      text
+      value="center"
+    >
+      EAI
+    </v-btn>
+    <v-btn
+      text
+      value="right"
+    >
+      MCG
+    </v-btn>
+  </v-btn-toggle>
+</template>

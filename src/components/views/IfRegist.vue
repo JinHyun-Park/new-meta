@@ -8,28 +8,9 @@
           </div>
         </v-flex>
       </v-layout>
-      <v-divider />
+      <!-- <v-divider /> -->
 
-      <v-btn-toggle v-model="text">
-        <v-btn
-          text
-          value="left"
-        >
-          EIGW
-        </v-btn>
-        <v-btn
-          text
-          value="center"
-        >
-          EAI
-        </v-btn>
-        <v-btn
-          text
-          value="right"
-        >
-          MCG
-        </v-btn>
-      </v-btn-toggle>
+      <ButtonToggle />    <!-- EIGW, EAI, MCG 버튼그룹 -->
       <v-layout
         row
         wrap
@@ -50,7 +31,7 @@
             >
               <v-card>
                 <RegistList />
-                <AddListInRegist />
+                <!-- <AddListInRegist /> -->
               </v-card>
             </v-flex>
           </v-layout>
@@ -80,13 +61,14 @@
 </template>
 
 <script>
-import AddListInRegist from '@/components/regist/AddListInRegist.vue';
+// import AddListInRegist from '@/components/regist/AddListInRegist.vue';
 import RightSideCard from '@/components/regist/RightSideCard.vue';
 import RegistList from '@/components/regist/RegistList.vue';
+import ButtonToggle from '@/components/regist/ButtonToggle.vue';
 
 export default {
   components: {
-    AddListInRegist, RightSideCard, RegistList,
+    RightSideCard, RegistList, ButtonToggle, // AddListInRegist,
   },
 };
 </script>

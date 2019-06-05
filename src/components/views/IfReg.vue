@@ -31,16 +31,15 @@
             <v-flex d-flex>
               <v-card>
                 <v-card-text><RegistList /></v-card-text>
-                <!-- <AddListInRegist /> -->
               </v-card>
             </v-flex>
 
-            <v-flex d-flex>
+            <v-flex
+              lg12
+              d-flex
+            >
               <v-card>
-                <v-card-text>
-                  <!-- <v-card-text><RegistList /></v-card-text> -->
-                  <AddListInRegist />
-                </v-card-text>
+                <v-card-text><IfAddForm /></v-card-text>
               </v-card>
             </v-flex>
           </v-layout>
@@ -63,7 +62,7 @@
           </v-layout> -->
 
           <v-card
-            color="grey"
+            color="white"
           >
             <v-card-text
               class="white--text"
@@ -88,14 +87,18 @@
 </template>
 
 <script>
-import AddListInRegist from '@/components/regist/AddListInRegist.vue';
+// import AddListInRegist from '@/components/regist/AddListInRegist.vue';
 import RightSideCard from '@/components/regist/RightSideCard.vue';
 import RegistList from '@/components/regist/RegistList.vue';
 import ButtonToggle from '@/components/regist/ButtonToggle.vue';
+import IfAddForm from '@/components/regist/IfAddForm.vue';
 
 export default {
   components: {
-    RightSideCard, RegistList, ButtonToggle, AddListInRegist,
+    RightSideCard,
+    RegistList,
+    ButtonToggle,
+    IfAddForm,
   },
 };
 </script>

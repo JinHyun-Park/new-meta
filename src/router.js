@@ -23,7 +23,7 @@ export default new Router({
   {
     path: '/ifReg',
     name: 'ifReg',
-    component: () => import('@/components/views/IfRegist.vue'),
+    component: () => import('@/components/views/IfReg.vue'),
   },
   ],
 });

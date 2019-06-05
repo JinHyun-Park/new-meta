@@ -4,14 +4,16 @@
       flat
       color="white"
     >
-      <v-toolbar-title>Expandable Table</v-toolbar-title>
+      <v-toolbar-title>신청 목록</v-toolbar-title>
       <v-spacer />
       <v-btn
-        color="primary"
+        color="blue lighten-2"
+        round
+        small
         dark
         @click="expand = !expand"
       >
-        {{ expand ? 'Close' : 'Keep' }} other rows
+        {{ expand ? 'Close' : 'Keep' }}
       </v-btn>
     </v-toolbar>
     <v-data-table

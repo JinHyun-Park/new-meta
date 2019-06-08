@@ -9,8 +9,7 @@
     >
       <span id="l_title">META PORTAL</span>
     </v-toolbar-title>
-    <v-spacer />
-    <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items>
       <v-btn
         flat
         @click="moveToHome()"
@@ -31,7 +30,7 @@
       </v-btn>
     </v-toolbar-items>
     <v-spacer />
-    <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items>
       <v-btn
         flat
         @click="moveToRegist()"

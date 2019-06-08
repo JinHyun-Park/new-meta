@@ -14,6 +14,7 @@
 
       <ButtonToggle />    <!-- EIGW, EAI, MCG 버튼그룹 -->
       <v-divider />
+
       <v-layout
         row
         wrap
@@ -38,8 +39,15 @@
               lg12
               d-flex
             >
+              <IfAddForm />
+            </v-flex>
+
+            <v-flex
+              lg12
+              d-flex
+            >
               <v-card>
-                <v-card-text><IfAddForm /></v-card-text>
+                <v-card-text><IfAddDtlForm /></v-card-text>
               </v-card>
             </v-flex>
           </v-layout>
@@ -65,9 +73,9 @@
             color="white"
           >
             <v-card-text
-              class="white--text"
+              class="black--text"
             >
-              11
+              111
               <RightSideCard />
             </v-card-text>
           </v-card>
@@ -75,13 +83,6 @@
       </v-layout>
 
       <v-divider />
-      <v-layout>
-        <v-flex>
-          <v-sheet>
-            메타 포탈
-          </v-sheet>
-        </v-flex>
-      </v-layout>
     </v-container>
   </v-app>
 </template>
@@ -92,6 +93,7 @@ import RightSideCard from '@/components/regist/RightSideCard.vue';
 import RegistList from '@/components/regist/RegistList.vue';
 import ButtonToggle from '@/components/regist/ButtonToggle.vue';
 import IfAddForm from '@/components/regist/IfAddForm.vue';
+import IfAddDtlForm from '@/components/regist/IfAddDtlForm.vue';
 
 export default {
   components: {
@@ -99,6 +101,7 @@ export default {
     RegistList,
     ButtonToggle,
     IfAddForm,
+    IfAddDtlForm,
   },
 };
 </script>

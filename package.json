@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@mdi/font": "^3.6.95",
     "@vue/cli": "^3.8.2",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.4.1",

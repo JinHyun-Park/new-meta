@@ -53,8 +53,12 @@ yarn add -D babel-cli babel-preset-env babel-preset-stage-2
 
 material-design icon
 npm install --save material-design-icons-iconfont
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+npm install @mdi/font --save
 
 transform-imports 패키지가 a-la-carte 컴포넌트에 꼭 필요한 건 아니지만 패키지들을 임포팅하는 프로세스를 간단하게 만들기 때문에 "매우" 추천
 https://vuetifyjs.com/ko/framework/a-la-carte
 npm i stylus stylus-loader style-loader css-loader --save-dev
 제한 사항(동적 구성 요소 있을 때 수동으로 구성 요소 가져와야함)에 관해서는 홈페이지 참고
+

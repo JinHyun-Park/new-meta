@@ -1,6 +1,7 @@
 <template>
   <v-btn-toggle v-model="text">
     <v-btn
+      id="btn1"
       text
       value="left"
     >
@@ -20,3 +21,15 @@
     </v-btn>
   </v-btn-toggle>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      text: 'left',
+    };
+  },
+  computed() {
+  },
+};
+</script>

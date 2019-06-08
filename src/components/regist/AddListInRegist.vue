@@ -12,10 +12,9 @@
           >
             <template v-slot:header>
               <div>Item</div>
-              <div>Item2</div>
             </template>
             <v-card>
-              <v-card-text class="grey lighten-3">
+              <v-card-text class="">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco

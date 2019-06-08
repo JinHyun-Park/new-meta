@@ -15,6 +15,7 @@ import router from './router';
 import store from './store/store';
 
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
+import '@mdi/font/css/materialdesignicons.css';
 import 'vuetify/dist/vuetify.min.css';
 import 'vuetify/src/stylus/app.styl';
 
@@ -36,5 +37,6 @@ Vue.use(Vuetify, {
 new Vue({
   router,
   store,
+  Iconfont: 'md, mdi',
   render: h => h(App),
 }).$mount('#app');

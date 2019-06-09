@@ -1,6 +1,9 @@
 <template>
   <v-form v-model="valid">
-    <v-expansion-panel v-model="panel">
+    <v-expansion-panel
+      v-model="panel"
+      expand
+    >
       <v-expansion-panel-content>
         <template v-slot:header>
           <v-layout>
@@ -163,7 +166,7 @@ export default {
       lastname: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+        // v => v.length <= 10 || 'Name must be less than 10 characters',
       ],
       mf: [
         'MQ', 'FILE',
@@ -180,8 +183,11 @@ export default {
       ftt: [
         'File_put', 'Get',
       ],
-      panel: 'true',
+      panel: [true],
+      select: '',
     };
+  },
+  computed: {
   },
 };
 

@@ -128,7 +128,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname1"
+            v-model="lastname"
             label="호스트명"
           />
         </v-flex>
@@ -138,7 +138,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname2"
+            v-model="lastname"
             label="IP(VIP)"
           />
         </v-flex>
@@ -148,7 +148,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname2"
+            v-model="lastname"
             label="IP(NAT)"
           />
         </v-flex>
@@ -254,7 +254,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname1"
+            v-model="lastname"
             label="호스트명"
           />
         </v-flex>
@@ -264,7 +264,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname2"
+            v-model="lastname"
             label="IP(VIP)"
           />
         </v-flex>
@@ -274,7 +274,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname2"
+            v-model="lastname"
             label="IP(NAT)"
           />
         </v-flex>

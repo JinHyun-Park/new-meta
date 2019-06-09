@@ -1,20 +1,21 @@
 <template>
-  <v-btn-toggle v-model="text">
+  <v-btn-toggle v-model="text1">
     <v-btn
       id="btn1"
-      text
+      flat
       value="left"
+      @click="conlog2"
     >
-      EIGW
+      EIGW {{ conlog }}
     </v-btn>
     <v-btn
-      text
+      flat
       value="center"
     >
       EAI
     </v-btn>
     <v-btn
-      text
+      flat
       value="right"
     >
       MCG
@@ -23,13 +24,36 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+// import { createNamespacedHelpers } from 'vuex';
+// const { mapState } = createNamespacedHelpers('reg');
+
 export default {
   data() {
     return {
-      text: 'left',
+      // text: 'left',
+      // text1: '12',
+      // text: 'left',
     };
   },
-  computed() {
+  computed: {
+    // ...mapState('reg', ['text1', 'text2']),
+    ...mapState(['text3', 'text4']),
+    ...mapState('regModule', ['text1', 'text2', 'text7', 'text8']),
+    ...mapState('reg2', ['text6']),
+    // ...mapState({ text: 'text2', text3: 'text3' }),
+    // ...mapState(['text1', 'reg/text2', 'text3']),
+    conlog() {
+      console.log(`reg: ${this.$store.state.reg2.text6}`);
+      // console.log(`app : ${this.image}`);
+      return this.text2;
+    },
+  },
+  methods: {
+    conlog2() {
+      console.log(this.text2);
+      // return this.reg;
+    },
   },
 };
 </script>

@@ -62,3 +62,8 @@ https://vuetifyjs.com/ko/framework/a-la-carte
 npm i stylus stylus-loader style-loader css-loader --save-dev
 제한 사항(동적 구성 요소 있을 때 수동으로 구성 요소 가져와야함)에 관해서는 홈페이지 참고
 
+path resolver 설치
+yarn add eslint-import-resolver-webpack -D
+
+<!-- npm i --save lodash
+npm i --save lodash.camelcase -->

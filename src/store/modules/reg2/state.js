@@ -1,3 +1,3 @@
 export default {
-  text6: 'okok',
+  //   text6: 'okok',
 };

@@ -31,7 +31,7 @@
               md3
             >
               <v-text-field
-                v-model="firstname"
+                v-model="addForm.ifNmKor"
                 :rules="nameRules"
                 :counter="10"
                 label="인터페이스명(한글)"
@@ -44,7 +44,7 @@
               md3
             >
               <v-text-field
-                v-model="lastname"
+                v-model="addForm.ifNmEng"
                 :rules="nameRules"
                 :counter="10"
                 label="인터페이스명(영문)"
@@ -57,6 +57,7 @@
               md2
             >
               <v-select
+                v-model="addForm.mqfile"
                 :items="mf"
                 label="MQ/FILE"
               />
@@ -67,7 +68,8 @@
               md2
             >
               <v-select
-                :items="direction"
+                v-model="addForm.direction"
+                :items="directionItem"
                 label="방향"
               />
             </v-flex>
@@ -77,7 +79,8 @@
               md2
             >
               <v-select
-                :items="async"
+                v-model="addForm.async"
+                :items="asyncItem"
                 label="동기/비동기"
               />
             </v-flex>
@@ -89,8 +92,8 @@
               md3
             >
               <v-combobox
-                v-model="select"
-                :items="msgPrc"
+                v-model="addForm.msgPrc"
+                :items="msgPrcItem"
                 label="수신 전문 처리"
                 multiple
                 chips
@@ -102,7 +105,7 @@
               md3
             >
               <v-text-field
-
+                v-model="addForm.recvPrg"
                 :rules="nameRules"
                 label="수신프로그램"
                 required
@@ -116,6 +119,7 @@
               md2
             >
               <v-select
+                v-model="addForm.fileTransType"
                 :items="ftt"
                 label="파일 전송 유형"
               />
@@ -125,7 +129,7 @@
               md5
             >
               <v-text-field
-                v-model="firstname"
+                v-model="addForm.sendDir"
                 label="송신 디렉토리"
               />
             </v-flex>
@@ -134,8 +138,29 @@
               md5
             >
               <v-text-field
-                v-model="firstname"
+                v-model="addForm.recvDir"
                 label="수신 디렉토리"
+              />
+            </v-flex>
+          </v-layout>
+
+          <v-layout>
+            <v-flex
+              xs12
+              md3
+            >
+              <v-text-field
+                v-model="addForm.recvCallShell"
+                label="수신 호출 쉘(전체경로)"
+              />
+            </v-flex>
+            <v-flex
+              xs12
+              md3
+            >
+              <v-text-field
+                v-model="addForm.opCode"
+                label="OP CODE"
               />
             </v-flex>
           </v-layout>
@@ -146,7 +171,7 @@
               md12
             >
               <v-text-field
-                v-model="firstname"
+                v-model="addForm.effect"
                 label="장애 시 영향도(상세)"
               />
             </v-flex>
@@ -158,12 +183,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
       valid: false,
-      firstname: '',
-      lastname: '',
       nameRules: [
         v => !!v || 'Name is required',
         // v => v.length <= 10 || 'Name must be less than 10 characters',
@@ -171,13 +196,13 @@ export default {
       mf: [
         'MQ', 'FILE',
       ],
-      direction: [
+      directionItem: [
         '단방향', '양방향',
       ],
-      async: [
+      asyncItem: [
         '동기', '비동기',
       ],
-      msgPrc: [
+      msgPrcItem: [
         '실시간', '배치',
       ],
       ftt: [
@@ -188,6 +213,7 @@ export default {
     };
   },
   computed: {
+    ...mapState('regModule', ['addForm']),
   },
 };
 

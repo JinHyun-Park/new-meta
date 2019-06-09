@@ -6,10 +6,7 @@ import modules from './modules';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  state: {
-    text3: 'center',
-    text4: 'left',
-  },
+  state: {},
   modules,
   // modules: {
   //   // reg: RegModule,

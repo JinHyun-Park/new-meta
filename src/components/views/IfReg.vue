@@ -43,6 +43,7 @@
             </v-flex>
 
             <v-flex
+              v-if="addDtlForm.show"
               lg12
               d-flex
             >
@@ -94,6 +95,7 @@ import RegistList from '@/components/regist/RegistList.vue';
 import ButtonToggle from '@/components/regist/ButtonToggle.vue';
 import IfAddForm from '@/components/regist/IfAddForm.vue';
 import IfAddDtlForm from '@/components/regist/IfAddDtlForm.vue';
+import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -102,6 +104,9 @@ export default {
     ButtonToggle,
     IfAddForm,
     IfAddDtlForm,
+  },
+  computed: {
+    ...mapState('regModule', ['addDtlForm']),
   },
 };
 </script>

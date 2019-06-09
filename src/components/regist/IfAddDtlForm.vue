@@ -7,6 +7,7 @@
           class="text-xs-left"
         >
           <v-select
+            v-model="addDtlForm.prodDev"
             :items="opDev"
             label="운영/개발"
             small
@@ -48,6 +49,7 @@
           md1
         >
           <v-select
+            v-model="sendData.company"
             :items="direction"
             label="회사"
           />
@@ -58,7 +60,7 @@
           md2
         >
           <v-text-field
-            v-model="lastname"
+            v-model="sendData.sysNmKor"
             label="시스템명(한글)"
           />
         </v-flex>
@@ -68,7 +70,7 @@
           md2
         >
           <v-text-field
-            v-model="lastname"
+            v-model="sendData.sysNmEng"
             label="시스템명(영문약자)"
           />
         </v-flex>
@@ -81,7 +83,7 @@
             outline
           >
             <span>
-              {{ mid }}
+              {{ sendData.mid }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -92,7 +94,7 @@
             outline
           >
             <span>
-              {{ opdirector }}
+              {{ sendData.operator }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -103,7 +105,7 @@
             outline
           >
             <span>
-              {{ manager }}
+              {{ sendData.manager }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -112,13 +114,16 @@
         </v-flex>
       </v-layout>
 
+      <!-- 교체버튼 -->
       <v-layout>
         <v-flex md1>
           <v-btn
             depressed
             fab
             small
+            @click="changeData({ recvData, sendData })"
           >
+            <!-- @click="changeData()" -->
             <v-icon>mdi-cached</v-icon>
           </v-btn>
         </v-flex>
@@ -128,7 +133,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="sendData.hostNm"
             label="호스트명"
           />
         </v-flex>
@@ -138,7 +143,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="sendData.ipVip"
             label="IP(VIP)"
           />
         </v-flex>
@@ -148,7 +153,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="sendData.ipNat"
             label="IP(NAT)"
           />
         </v-flex>
@@ -158,6 +163,7 @@
           md1
         >
           <v-select
+            v-model="sendData.os"
             :items="direction"
             label="OS"
           />
@@ -182,6 +188,7 @@
           md1
         >
           <v-select
+            v-model="recvData.company"
             :items="direction"
             label="회사"
           />
@@ -192,7 +199,7 @@
           md2
         >
           <v-text-field
-            v-model="lastname"
+            v-model="recvData.sysNmKor"
             label="시스템명(한글)"
           />
         </v-flex>
@@ -202,7 +209,7 @@
           md2
         >
           <v-text-field
-            v-model="lastname"
+            v-model="recvData.sysNmEng"
             label="시스템명(영문약자)"
           />
         </v-flex>
@@ -215,7 +222,7 @@
             outline
           >
             <span>
-              {{ mid }}
+              {{ recvData.mid }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -226,7 +233,7 @@
             outline
           >
             <span>
-              {{ opdirector }}
+              {{ recvData.operator }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -237,7 +244,7 @@
             outline
           >
             <span>
-              {{ manager }}
+              {{ recvData.manager }}
             </span>
             <v-icon right>
               mdi-magnify
@@ -254,7 +261,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="recvData.hostNm"
             label="호스트명"
           />
         </v-flex>
@@ -264,7 +271,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="recvData.ipVip"
             label="IP(VIP)"
           />
         </v-flex>
@@ -274,7 +281,7 @@
           md1
         >
           <v-text-field
-            v-model="lastname"
+            v-model="recvData.ipNat"
             label="IP(NAT)"
           />
         </v-flex>
@@ -284,6 +291,7 @@
           md1
         >
           <v-select
+            v-model="recvData.os"
             :items="direction"
             label="OS"
           />
@@ -312,6 +320,9 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+import Constant from '@/constant/regConstant';
+
 export default {
   data() {
     return {
@@ -344,6 +355,24 @@ export default {
       opdirector: '운영담당',
       manager: '담당매니저',
     };
+  },
+  computed: {
+    ...mapState('regModule', ['sendData', 'recvData', 'addDtlForm']),
+  },
+  mounted() {
+    this.initiateDtlForm();
+  },
+  methods: {
+    ...mapActions('regModule',
+      {
+        changeData: Constant.CHANGE_CONTENTS,
+        initiateDtlForm: Constant.INITIATE_DTLFORM,
+      }),
+    // changeData() {
+    //   this.$store.dispatch(`regModule/${Constant.CHANGE_CONTENTS}`,
+    //     { recvData: this.recvData, sendData: this.sendData });
+    // },
+    // ...mapActions('regModule', { }),
   },
 };
 

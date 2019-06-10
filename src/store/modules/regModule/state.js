@@ -20,7 +20,8 @@ export default {
     recvCallShell: '',
     opCode: '',
     effect: '',
-    subList: [],
+    recvList: [],
+    sendList: [],
   },
   sendData: { // 송신
     company: '',

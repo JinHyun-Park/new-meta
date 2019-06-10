@@ -21,6 +21,7 @@
       :items="regList"
       :expand="expand"
       item-key="id"
+      hide-actions
     >
       <template v-slot:items="props">
         <tr @click="props.expanded = !props.expanded">
@@ -51,7 +52,10 @@
         </tr>
       </template>
       <template v-slot:expand="props">
-        <v-card flat>
+        <v-card
+          flat
+          color="grey"
+        >
           <v-card-text>{{ props.item.regDtl }}</v-card-text>
         </v-card>
       </template>
@@ -136,6 +140,24 @@ export default {
           async: 'Y',
           delete: 'DEL',
           id: 5,
+        },
+        {
+          name: 'MQ',
+          ifNmEng: 'INFO_SMS_SND',
+          ifNmKor: 'SMS 발송',
+          direction: '단방향',
+          async: 'Y',
+          delete: 'DEL',
+          id: 6,
+        },
+        {
+          name: 'MQ',
+          ifNmEng: 'INFO_SMS_SND',
+          ifNmKor: 'SMS 발송',
+          direction: '단방향',
+          async: 'Y',
+          delete: 'DEL',
+          id: 7,
         },
       ],
     };

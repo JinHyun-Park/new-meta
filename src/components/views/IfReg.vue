@@ -1,66 +1,76 @@
 <template>
-  <v-app>
-    <v-container
-      grid-list-md
+  <v-container
+    fluid
+    grid-list-md
+  >
+    <v-layout
+      justify-center
+      wrap
     >
-      <v-layout>
-        <v-flex>
-          <div>
-            신청목록
-          </div>
-        </v-flex>
-      </v-layout>
-      <!-- <v-divider /> -->
-
-      <ButtonToggle />    <!-- EIGW, EAI, MCG 버튼그룹 -->
-      <v-divider />
-
-      <v-layout
-        row
-        wrap
+      <v-flex
+        xl10
+        lg12
+        md12
+        xs12
       >
-        <v-flex
-          d-flex
-          xs9
-          sm9
-          md9
+        <v-layout>
+          <v-flex>
+            <div>
+              신청목록
+            </div>
+          </v-flex>
+        </v-layout>
+        <!-- <v-divider /> -->
+
+        <ButtonToggle />    <!-- EIGW, EAI, MCG 버튼그룹 -->
+        <v-divider />
+
+        <v-layout
+          row
+          wrap
         >
-          <v-layout
-            row
-            wrap
+          <v-flex
+            d-flex
+            xs9
+            sm9
+            md9
           >
-            <v-flex d-flex>
-              <v-card>
-                <v-card-text><RegistList /></v-card-text>
-              </v-card>
-            </v-flex>
-
-            <v-flex
-              lg12
-              d-flex
+            <v-layout
+              row
+              wrap
             >
-              <IfAddForm />
-            </v-flex>
+              <v-flex d-flex>
+                <v-card>
+                  <v-card-text><RegistList /></v-card-text>
+                </v-card>
+              </v-flex>
 
-            <v-flex
-              v-if="addDtlForm.show"
-              lg12
-              d-flex
-            >
-              <v-card>
-                <v-card-text><IfAddDtlForm /></v-card-text>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-flex>
+              <v-flex
+                lg12
+                d-flex
+              >
+                <IfAddForm />
+              </v-flex>
 
-        <v-flex
-          d-flex
-          xs3
-          md3
-          class="text-xs-center"
-        >
-          <!-- <v-layout class="blue">
+              <v-flex
+                v-if="addDtlForm.show"
+                lg12
+                d-flex
+              >
+                <v-card>
+                  <v-card-text><IfAddDtlForm /></v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+
+          <v-flex
+            d-flex
+            xs3
+            md3
+            class="text-xs-center"
+          >
+            <!-- <v-layout class="blue">
             <v-flex align-self-center>
               <v-card>
                 <v-card-text>
@@ -70,22 +80,23 @@
             </v-flex>
           </v-layout> -->
 
-          <v-card
-            color="white"
-          >
-            <v-card-text
-              class="black--text"
+            <v-card
+              color="white"
             >
-              111
-              <RightSideCard />
-            </v-card-text>
-          </v-card>
-        </v-flex>
-      </v-layout>
+              <v-card-text
+                class="black--text"
+              >
+                111
+                <RightSideCard />
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
 
-      <v-divider />
-    </v-container>
-  </v-app>
+        <v-divider />
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

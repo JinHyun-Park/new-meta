@@ -1,7 +1,7 @@
 <template>
   <v-form v-model="valid">
-    <v-container>
-      <v-layout>
+    <v-container fluid>
+      <v-layout wrap>
         <v-flex
           md2
           class="text-xs-left"
@@ -31,10 +31,11 @@
           </v-btn>
         </v-flex>
       </v-layout>
-      <v-layout>
+      <v-layout wrap>
         <v-flex
-          xs3
-          md1
+          xs2
+          md2
+          lg1
         >
           <v-chip
             color="red"
@@ -45,8 +46,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          xs2
+          md2
+          lg1
         >
           <v-select
             v-model="sendData.company"
@@ -56,8 +58,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md2
+          xs4
+          md4
+          lg2
         >
           <v-text-field
             v-model="sendData.sysNmKor"
@@ -66,8 +69,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md2
+          xs4
+          md4
+          lg2
         >
           <v-text-field
             v-model="sendData.sysNmEng"
@@ -76,8 +80,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md6
+          xs12
+          md12
+          lg6
         >
           <v-btn
             outline
@@ -115,8 +120,11 @@
       </v-layout>
 
       <!-- 교체버튼 -->
-      <v-layout>
-        <v-flex md1>
+      <v-layout wrap>
+        <v-flex
+          md1
+          lg1
+        >
           <v-btn
             depressed
             fab
@@ -129,8 +137,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="sendData.hostNm"
@@ -139,8 +148,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="sendData.ipVip"
@@ -149,8 +159,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="sendData.ipNat"
@@ -159,8 +170,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-select
             v-model="sendData.os"
@@ -170,10 +182,11 @@
         </v-flex>
       </v-layout>
 
-      <v-layout>
+      <v-layout wrap>
         <v-flex
-          xs3
-          md1
+          xs2
+          md2
+          lg1
         >
           <v-chip
             color="blue"
@@ -184,8 +197,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          xs2
+          md2
+          lg1
         >
           <v-select
             v-model="recvData.company"
@@ -195,8 +209,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md2
+          xs4
+          md4
+          lg2
         >
           <v-text-field
             v-model="recvData.sysNmKor"
@@ -205,8 +220,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md2
+          xs4
+          md4
+          lg2
         >
           <v-text-field
             v-model="recvData.sysNmEng"
@@ -215,8 +231,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md6
+          xs12
+          md12
+          lg6
         >
           <v-btn
             outline
@@ -253,12 +270,13 @@
         </v-flex>
       </v-layout>
 
-      <v-layout>
+      <v-layout wrap>
         <v-flex md1 />
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="recvData.hostNm"
@@ -267,8 +285,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="recvData.ipVip"
@@ -277,8 +296,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-text-field
             v-model="recvData.ipNat"
@@ -287,8 +307,9 @@
         </v-flex>
 
         <v-flex
-          xs6
-          md1
+          sm6
+          md4
+          lg2
         >
           <v-select
             v-model="recvData.os"

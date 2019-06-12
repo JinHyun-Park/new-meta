@@ -25,9 +25,9 @@
               </v-btn>
             </v-flex>
           </v-layout>
-          <v-layout>
+          <v-layout wrap>
             <v-flex
-              xs12
+              sm6
               md3
             >
               <v-text-field
@@ -40,7 +40,7 @@
             </v-flex>
 
             <v-flex
-              xs6
+              sm6
               md3
             >
               <v-text-field
@@ -53,7 +53,7 @@
             </v-flex>
 
             <v-flex
-              xs6
+              sm4
               md2
             >
               <v-select
@@ -64,7 +64,7 @@
             </v-flex>
 
             <v-flex
-              xs6
+              sm4
               md2
             >
               <v-select
@@ -75,7 +75,7 @@
             </v-flex>
 
             <v-flex
-              xs6
+              sm4
               md2
             >
               <v-select
@@ -86,9 +86,9 @@
             </v-flex>
           </v-layout>
 
-          <v-layout>
+          <v-layout wrap>
             <v-flex
-              xs6
+              sm6
               md3
             >
               <v-combobox
@@ -101,7 +101,7 @@
             </v-flex>
 
             <v-flex
-              xs6
+              sm6
               md3
             >
               <v-text-field
@@ -113,7 +113,7 @@
             </v-flex>
           </v-layout>
 
-          <v-layout>
+          <v-layout wrap>
             <v-flex
               xs6
               md2
@@ -125,7 +125,7 @@
               />
             </v-flex>
             <v-flex
-              xs12
+              sm12
               md5
             >
               <v-text-field
@@ -134,7 +134,7 @@
               />
             </v-flex>
             <v-flex
-              xs12
+              sm12
               md5
             >
               <v-text-field

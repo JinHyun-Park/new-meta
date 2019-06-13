@@ -389,10 +389,6 @@ export default {
         changeData: Constant.CHANGE_CONTENTS,
         initiateDtlForm: Constant.INITIATE_DTLFORM,
       }),
-    // changeData() {
-    //   this.$store.dispatch(`regModule/${Constant.CHANGE_CONTENTS}`,
-    //     { recvData: this.recvData, sendData: this.sendData });
-    // },
     // ...mapActions('regModule', { }),
   },
 };

@@ -31,12 +31,10 @@
         >
           <v-flex
             d-flex
-            xs9
-            sm9
-            md9
+            md12
+            lg6
           >
             <v-layout
-              row
               wrap
             >
               <v-flex d-flex>
@@ -44,30 +42,13 @@
                   <v-card-text><RegistList /></v-card-text>
                 </v-card>
               </v-flex>
-
-              <v-flex
-                lg12
-                d-flex
-              >
-                <IfAddForm />
-              </v-flex>
-
-              <v-flex
-                v-if="addDtlForm.show"
-                lg12
-                d-flex
-              >
-                <v-card>
-                  <v-card-text><IfAddDtlForm /></v-card-text>
-                </v-card>
-              </v-flex>
             </v-layout>
           </v-flex>
 
           <v-flex
             d-flex
-            xs3
-            md3
+            md12
+            lg6
             class="text-xs-center"
           >
             <!-- <v-layout class="blue">
@@ -79,8 +60,19 @@
               </v-card>
             </v-flex>
           </v-layout> -->
+            <v-layout
+              wrap
+              row
+            >
+              <v-flex
+                lg12
+                d-flex
+              >
+                <IfAddForm />
+              </v-flex>
+            </v-layout>
 
-            <v-card
+            <!-- <v-card
               color="white"
             >
               <v-card-text
@@ -89,6 +81,17 @@
                 111
                 <RightSideCard />
               </v-card-text>
+            </v-card> -->
+          </v-flex>
+        </v-layout>
+        <v-layout wrap>
+          <v-flex
+            v-if="addDtlForm.show"
+            lg12
+            d-flex
+          >
+            <v-card>
+              <v-card-text><IfAddDtlForm /></v-card-text>
             </v-card>
           </v-flex>
         </v-layout>
@@ -101,7 +104,7 @@
 
 <script>
 // import AddListInRegist from '@/components/regist/AddListInRegist.vue';
-import RightSideCard from '@/components/regist/RightSideCard.vue';
+// import RightSideCard from '@/components/regist/RightSideCard.vue';
 import RegistList from '@/components/regist/RegistList.vue';
 import ButtonToggle from '@/components/regist/ButtonToggle.vue';
 import IfAddForm from '@/components/regist/IfAddForm.vue';
@@ -110,7 +113,7 @@ import { mapState } from 'vuex';
 
 export default {
   components: {
-    RightSideCard,
+    // RightSideCard,
     RegistList,
     ButtonToggle,
     IfAddForm,

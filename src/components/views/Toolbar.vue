@@ -28,6 +28,35 @@
       >
         I/F Regist
       </v-btn>
+
+      <v-btn
+        flat
+        class="text-xs-center"
+      >
+        <v-menu
+          open-on-hover
+          offset-y
+        >
+          <template v-slot:activator="{ on }">
+            <v-btn
+              flat
+              v-on="on"
+            >
+              IF신청
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-tile
+              v-for="(item, index) in items"
+              :key="index"
+              @click="al(item.path)"
+            >
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-btn>
     </v-toolbar-items>
     <v-spacer />
     <v-toolbar-items>
@@ -43,7 +72,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      items: [
+        { title: 'HOME', path: 'home' },
+        { title: 'CRUD Table', path: 'crud' },
+        { title: 'ifReg', path: 'ifReg' },
+        { title: 'ifReg', path: 'ifReg' },
+      ],
+    };
+  },
   methods: {
+    al(path) {
+      this.$router.push({ name: path });
+    },
     moveToHome() {
       this.$router.push({ name: 'home' });
     },

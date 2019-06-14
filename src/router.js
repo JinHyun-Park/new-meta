@@ -25,5 +25,10 @@ export default new Router({
     name: 'ifReg',
     component: () => import('@/components/views/IfReg.vue'),
   },
+  {
+    path: '/ifReg/crud',
+    name: 'crud',
+    component: () => import('@/components/views/Crud.vue'),
+  },
   ],
 });

@@ -77,4 +77,25 @@ export default {
     state.editedItem = Object.assign({}, payload.item);
     state.dialog = true;
   },
+  editIndexfunc: (state, payload) => {
+    state.editedIndex = payload.editIndex;
+  },
+  changeDialog: (state, payload) => {
+    state.dialog = payload.dialog;
+  },
+  deleteList: (state, payload) => {
+    state.desserts.splice(payload.index, 1);
+  },
+  saveData: (state, payload) => {
+    if (state.editedIndex > -1) {
+      Object.assign(state.desserts[state.editedIndex], payload.editedItem);
+    } else {
+      state.desserts.push(payload.editedItem);
+    }
+  },
+
+  // 테스트 소스용
+  getIfDataList: (state, payload) => {
+    state.resultData = payload.resultData;
+  },
 };

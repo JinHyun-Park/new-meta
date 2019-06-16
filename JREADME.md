@@ -67,3 +67,6 @@ yarn add eslint-import-resolver-webpack -D
 
 <!-- npm i --save lodash
 npm i --save lodash.camelcase -->
+
+ES6 사용을 위한 polyfill 설정(IE에서 Promise 함수 사용을 위함)
+npm install --save es6-promise

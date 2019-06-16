@@ -21,6 +21,8 @@ import 'vuetify/src/stylus/app.styl';
 
 Vue.config.productionTip = false;
 
+require('es6-promise').polyfill();
+
 Vue.use(Vuetify, {
   components: {
     VApp,

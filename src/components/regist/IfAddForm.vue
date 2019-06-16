@@ -15,11 +15,12 @@
         <v-container>
           <v-layout>
             <v-flex class="text-xs-right">
+              <!-- :disabled="!valid" -->
               <v-btn
-                :disabled="!valid"
                 small
                 round
                 color="blue lighten-2 white--text"
+                @click="ifFormAdd"
               >
                 인터페이스 추가
               </v-btn>
@@ -183,7 +184,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -210,10 +211,33 @@ export default {
       ],
       panel: [true],
       select: '',
+      defaultForm: { // 신청폼 데이터
+        ifNmKor: '',
+        ifNmEng: '',
+        mqfile: '',
+        direction: '',
+        async: '',
+        msgPrc: '',
+        recvPrg: '',
+        fileTransType: '',
+        sendDir: '',
+        recvDir: '',
+        recvCallShell: '',
+        opCode: '',
+        effect: '',
+        recvList: [],
+        sendList: [],
+      },
     };
   },
   computed: {
     ...mapState('regModule', ['addForm']),
+  },
+  methods: {
+    ...mapActions('regModule', ['ifFormAddAction']),
+    ifFormAdd() {
+      this.ifFormAddAction({ addForm: this.addForm });
+    },
   },
 };
 

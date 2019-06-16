@@ -7,4 +7,7 @@ export default {
   [Constant.INITIATE_DTLFORM]: (store) => {
     store.commit(Constant.INITIATE_DTLFORM);
   },
+  ifFormAddAction: (store, payload) => {
+    store.commit('ifFormAddAction', payload);
+  },
 };

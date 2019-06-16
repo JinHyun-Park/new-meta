@@ -28,6 +28,7 @@ module.exports = {
                 ]
             }
         ],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }]
     },
     parserOptions: {
         parser: 'babel-eslint',

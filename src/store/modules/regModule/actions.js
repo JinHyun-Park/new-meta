@@ -10,4 +10,7 @@ export default {
   ifFormAddAction: (store, payload) => {
     store.commit('ifFormAddAction', payload);
   },
+  initiateRegList: (store) => {
+    store.commit('initiateRegList');
+  },
 };

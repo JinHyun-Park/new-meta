@@ -13,4 +13,10 @@ export default {
   initiateRegList: (store) => {
     store.commit('initiateRegList');
   },
+  deleteItem: (store, payload) => {
+    store.commit('deleteItem', payload);
+  },
+  initiateForm: (store) => {
+    store.commit('initiateForm');
+  },
 };

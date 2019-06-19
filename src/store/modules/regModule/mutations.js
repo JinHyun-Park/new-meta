@@ -35,11 +35,11 @@ export default {
     };
   },
   ifFormAddAction: (state, payload) => {
-    state.regList.push(payload.addForm);
+    state.regList.push(payload.editForm);
   },
   initiateRegList: (state) => {
     state.regList = [{
-      name: 'MQ',
+      mqfile: 'MQ',
       ifNmEng: 'INFO_SMS_SND',
       ifNmKor: 'SMS 발송',
       direction: '단방향',
@@ -52,7 +52,7 @@ export default {
       }],
     },
     {
-      name: 'MQ',
+      mqfile: 'MQ',
       ifNmEng: 'SMS_RSLT',
       ifNmKor: 'SMS 결과',
       direction: '단방향',
@@ -61,7 +61,7 @@ export default {
       id: 2,
     },
     {
-      name: 'FILE',
+      mqfile: 'FILE',
       ifNmEng: 'WEEK_DATA',
       ifNmKor: '주간 데이터',
       direction: '단방향',
@@ -70,7 +70,7 @@ export default {
       id: 3,
     },
     {
-      name: 'FILE',
+      mqfile: 'FILE',
       ifNmEng: 'INFO_SMS_SND',
       ifNmKor: 'SMS 발송',
       direction: '단방향',
@@ -79,7 +79,7 @@ export default {
       id: 4,
     },
     {
-      name: 'MQ',
+      mqfile: 'MQ',
       ifNmEng: 'INFO_SMS_SND',
       ifNmKor: 'SMS 발송',
       direction: '단방향',
@@ -88,7 +88,7 @@ export default {
       id: 5,
     },
     {
-      name: 'MQ',
+      mqfile: 'MQ',
       ifNmEng: 'INFO_SMS_SND',
       ifNmKor: 'SMS 발송',
       direction: '단방향',
@@ -97,7 +97,7 @@ export default {
       id: 6,
     },
     {
-      name: 'MQ',
+      mqfile: 'MQ',
       ifNmEng: 'INFO_SMS_SND',
       ifNmKor: 'SMS 발송',
       direction: '단방향',
@@ -106,5 +106,11 @@ export default {
       id: 7,
     },
     ];
+  },
+  deleteItem: (state, payload) => {
+    state.regList.splice(payload.index, 1);
+  },
+  initiateForm: (state) => {
+    state.editForm = Object.assign({}, state.defaultForm);
   },
 };

@@ -26,7 +26,7 @@
       <template v-slot:items="props">
         <tr @click="props.expanded = !props.expanded">
           <td class="text-xs-center">
-            {{ props.item.name }}
+            {{ props.item.mqfile }}
           </td>
           <td class="text-xs-center">
             {{ props.item.ifNmEng }}
@@ -44,7 +44,7 @@
             <v-btn
               :value="props.item.id"
               small
-              @click.stop="alertSome(props.item.id)"
+              @click.stop="inDeleteItem(props.item)"
             >
               DEL
             </v-btn>
@@ -102,11 +102,10 @@ export default {
     this.initiateRegList();
   },
   methods: {
-    ...mapActions('regModule', ['initiateRegList']),
-    alertSome(id) {
-      console.log(id);
-      // eslint-disable-next-line no-alert
-      alert(id);
+    ...mapActions('regModule', ['initiateRegList', 'deleteItem']),
+    inDeleteItem(item) {
+      const index = this.regList.indexOf(item);
+      this.deleteItem({ index });
     },
   },
 };

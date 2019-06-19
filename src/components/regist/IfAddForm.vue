@@ -32,7 +32,7 @@
               md3
             >
               <v-text-field
-                v-model="addForm.ifNmKor"
+                v-model="editForm.ifNmKor"
                 :rules="nameRules"
                 :counter="10"
                 label="인터페이스명(한글)"
@@ -45,7 +45,7 @@
               md3
             >
               <v-text-field
-                v-model="addForm.ifNmEng"
+                v-model="editForm.ifNmEng"
                 :rules="nameRules"
                 :counter="10"
                 label="인터페이스명(영문)"
@@ -58,7 +58,7 @@
               md2
             >
               <v-select
-                v-model="addForm.mqfile"
+                v-model="editForm.mqfile"
                 :items="mf"
                 label="MQ/FILE"
               />
@@ -69,7 +69,7 @@
               md2
             >
               <v-select
-                v-model="addForm.direction"
+                v-model="editForm.direction"
                 :items="directionItem"
                 label="방향"
               />
@@ -80,7 +80,7 @@
               md2
             >
               <v-select
-                v-model="addForm.async"
+                v-model="editForm.async"
                 :items="asyncItem"
                 label="동기/비동기"
               />
@@ -93,7 +93,7 @@
               md3
             >
               <v-combobox
-                v-model="addForm.msgPrc"
+                v-model="editForm.msgPrc"
                 :items="msgPrcItem"
                 label="수신 전문 처리"
                 multiple
@@ -106,7 +106,7 @@
               md3
             >
               <v-text-field
-                v-model="addForm.recvPrg"
+                v-model="editForm.recvPrg"
                 :rules="nameRules"
                 label="수신프로그램"
                 required
@@ -120,7 +120,7 @@
               md2
             >
               <v-select
-                v-model="addForm.fileTransType"
+                v-model="editForm.fileTransType"
                 :items="ftt"
                 label="파일 전송 유형"
               />
@@ -130,7 +130,7 @@
               md5
             >
               <v-text-field
-                v-model="addForm.sendDir"
+                v-model="editForm.sendDir"
                 label="송신 디렉토리"
               />
             </v-flex>
@@ -139,7 +139,7 @@
               md5
             >
               <v-text-field
-                v-model="addForm.recvDir"
+                v-model="editForm.recvDir"
                 label="수신 디렉토리"
               />
             </v-flex>
@@ -151,7 +151,7 @@
               md3
             >
               <v-text-field
-                v-model="addForm.recvCallShell"
+                v-model="editForm.recvCallShell"
                 label="수신 호출 쉘(전체경로)"
               />
             </v-flex>
@@ -160,7 +160,7 @@
               md3
             >
               <v-text-field
-                v-model="addForm.opCode"
+                v-model="editForm.opCode"
                 label="OP CODE"
               />
             </v-flex>
@@ -172,7 +172,7 @@
               md12
             >
               <v-text-field
-                v-model="addForm.effect"
+                v-model="editForm.effect"
                 label="장애 시 영향도(상세)"
               />
             </v-flex>
@@ -211,33 +211,23 @@ export default {
       ],
       panel: [true],
       select: '',
-      defaultForm: { // 신청폼 데이터
-        ifNmKor: '',
-        ifNmEng: '',
-        mqfile: '',
-        direction: '',
-        async: '',
-        msgPrc: '',
-        recvPrg: '',
-        fileTransType: '',
-        sendDir: '',
-        recvDir: '',
-        recvCallShell: '',
-        opCode: '',
-        effect: '',
-        recvList: [],
-        sendList: [],
-      },
     };
   },
   computed: {
-    ...mapState('regModule', ['addForm']),
+    ...mapState('regModule', ['regList', 'editForm']),
+  },
+  created() {
+    this.initiateForm();
   },
   methods: {
-    ...mapActions('regModule', ['ifFormAddAction']),
+    ...mapActions('regModule', ['ifFormAddAction', 'initiateForm']),
     ifFormAdd() {
-      this.ifFormAddAction({ addForm: this.addForm });
+      this.ifFormAddAction({ editForm: this.editForm });
+      this.initiateForm();
     },
+    // initiateForm() {
+    //   this.editForm = Object.assign({}, this.defaultForm);
+    // },
   },
 };
 

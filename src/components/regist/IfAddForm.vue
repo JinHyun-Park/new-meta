@@ -222,6 +222,7 @@ export default {
   methods: {
     ...mapActions('regModule', ['ifFormAddAction', 'initiateForm']),
     ifFormAdd() {
+      this.editForm.id = new Date().getTime();
       this.ifFormAddAction({ editForm: this.editForm });
       this.initiateForm();
     },

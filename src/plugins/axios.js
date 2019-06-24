@@ -7,9 +7,12 @@ import axios from 'axios';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
+// csrf 적용
+// axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
+
 const config = {
     // baseURL: process.env.baseURL || process.env.apiUrl || ""
-    // timeout: 60 * 1000, // Timeout
+    // timeout: 60 * 1000, // 해당 ms 이내에 응답이 오지 않으면 에러로 간주
     // withCredentials: true, // Check cross-site Access-Control
 };
 
